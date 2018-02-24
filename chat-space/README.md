@@ -6,6 +6,7 @@
 |email|string|null: false, unique: true|
 
 ### Association
+  has_many :groups, throuth: members
 - has_many :members
 - has_many :messages
 
@@ -16,8 +17,10 @@
 |name|text|null: false, unique: true|
 
 ### Association
+  has_many :users, throuth: :members
 - has_many :members
 - has_many :messages
+  accepts_nested_attributes_for :members
 
 ## membersテーブル
 
