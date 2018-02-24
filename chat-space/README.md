@@ -2,7 +2,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false, unique: true|
+|name|text|null: false, index: true, unique: true|
+
 
 
 ### Association
