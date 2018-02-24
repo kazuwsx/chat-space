@@ -2,11 +2,11 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|text|null: false, unique: true|
-|email|string|null: false, unique: true|
+|name|text|null: false, unique: true|
+
 
 ### Association
-- has_many :groups, throuth: members
+- has_many :groups, through: :members
 - has_many :members
 - has_many :messages
 
@@ -17,7 +17,7 @@
 |name|text|null: false, unique: true|
 
 ### Association
-- has_many :users, throuth: :members
+- has_many :users, through: :members
 - has_many :members
 - has_many :messages
 
