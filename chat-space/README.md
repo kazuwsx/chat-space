@@ -6,8 +6,8 @@
 |email|string|null: false, unique: true|
 
 ### Association
-- has_many :member
-- has_many :message
+- has_many :members
+- has_many :messages
 
 ## groupテーブル
 
@@ -16,8 +16,8 @@
 |name|text|null: false, unique: true|
 
 ### Association
-- has_many :member
-- has_many :message
+- has_many :members
+- has_many :messages
 
 ## membersテーブル
 
@@ -30,7 +30,7 @@
 - belongs_to :group
 - belongs_to :user
 
-## messagesrテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
