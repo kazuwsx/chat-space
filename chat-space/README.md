@@ -3,6 +3,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|text|null: false, index: true, unique: true|
+|mail|text|null: false, unique: true|
 
 
 
@@ -11,7 +12,7 @@
 - has_many :members
 - has_many :messages
 
-## groupテーブル
+## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
