@@ -2,8 +2,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false, index: true, unique: true|
-|mail|text|null: false, unique: true|
+|name|string|index: true, null: false, unique: true|
+|mail|string|null: false, unique: true|
 
 
 
@@ -16,7 +16,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false, unique: true|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :users, through: :members
