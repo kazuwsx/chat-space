@@ -1,74 +1,63 @@
 .wrapper
-  .side
+  .side-bar
     .header
       %h3.header__name
         = current_user.name
       %ul.header__lists
         %li.list
-          = link_to do
-          = fa_icon 'pencil-square-o', class: 'icon'
+          = link_to new_group_path do
+            = fa_icon 'pencil-square-o', class: 'icon'
         %li.list
-           = link_to edit_user_path(current_user) do
-          = fa_icon 'cog', class: 'icon'
+          = link_to edit_user_path(current_user) do
+            = fa_icon 'cog', class: 'icon'
     .groups
+      - current_user.groups.each do |group|
       .group
-        %a{ :href => '/groups/new'}
+        = link_to group__messages_path(group)
           .group__name
-            aaa
+          = group.name
           .group__message
-            iii
-      .group
-        %a{ :href => '/groups/new'}
-          .group__name
-            bbb
-          .group__message
-            lll
-      .group
-        %a{ :href => '/groups/new'}
-          .group__name
-            ccc
-          .group__message
-            メッセージはありません
+          まだメッセージは入力されていません
   .chat
-    .header
-      .left-header
-        .left-header__title
-          teamABC
-        %ul.left-header__members
-          Members :
-          %li.menber
-            kazu
-          %li.menber
-            ken
-          %li.menber
-            taku
-      .right-header
-        %a.right-header__button{ :href => '/groups/edit'}
-          Edit
-    .messages
-      .message
-        .upper-message
-          .upper-message__user-name
-            kazu
-          .upper-message__date
-            2018/02/19 07:17
-        .lower-message
-          .lower-message__content
-            aaa
-      .message
-        .upper-message
-          .upper-message__user-name
-            kazu
-          .upper-message__date
-            2018/02/19 07:17
-        .lower-message
-          .lower-message__content
-            ひまああああああ
-    .form
-      %form#new_message.js-form
-        %input#message_content.form__message.js-content{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-        .form__mask
-          %label.form__mask__image{:for => "message_image"}
-            %i.fa.fa-picture-o.icon
+      .header
+        .left-header
+          .left-header__title
+            teamABC
+          %ul.left-header__members
+            Members :
+            %li.menber
+              kazu
+            %li.menber
+              ken
+            %li.menber
+              taku
+        .right-header
+          = link_to users_path do
+            Edit
+      .messages
+        .message
+          .upper-message
+            .upper-message__user-name
+              kazu
+            .upper-message__date
+              2018/02/19 07:17
+          .lower-message
+            .lower-message__content
+              aaa
+        .message
+          .upper-message
+            .upper-message__user-name
+              kazu
+            .upper-message__date
+              2018/02/19 07:17
+          .lower-message
+            .lower-message__content
+              ひまああああああ
+      .form
+        %form#new_message.js-form
+          %input#message_content.form__message.js-content{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+          .form__mask
+            %label.form__mask__image{:for => "message_image"}
+              %i.fa.fa-picture-o.icon
 
-        %input.form__submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+          %input.form__submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
