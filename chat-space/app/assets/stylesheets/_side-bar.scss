@@ -12,16 +12,12 @@
       font-size: 16px;
       font-weight: bold;
       color: white;
-      line-height: 100px;
     }
     &__lists {
+      display: inline-block;
       float: right;
-      line-height: 100px;
-      height: 100px;
-      width: 36px;
       .list {
         display: inline-block;
-        height: 100px;
         .icon {
           color: #fff;
           font-size: 16px;
@@ -32,8 +28,6 @@
   .groups {
     height: calc(100vh - 100px);
     padding: 0 20px;
-    float: left;
-    width: 300px;
     background: #2f3e51;
       .group {
         box-sizing: border-box;

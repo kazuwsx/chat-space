@@ -1,0 +1,43 @@
+.chat
+  .header
+    .left-header
+      .left-header__title
+        teamABC
+      %ul.left-header__members
+        Members :
+        %li.menber
+          kazu
+        %li.menber
+          ken
+        %li.menber
+          taku
+    .right-header
+      = link_to users_path do
+        Edit
+  .messages
+    .message
+      .upper-message
+        .upper-message__user-name
+          kazu
+        .upper-message__date
+          2018/02/19 07:17
+      .lower-message
+        .lower-message__content
+          aaa
+    .message
+      .upper-message
+        .upper-message__user-name
+          kazu
+        .upper-message__date
+          2018/02/19 07:17
+      .lower-message
+        .lower-message__content
+          ひまああああああ
+  .form
+    %form#new_message.js-form
+      %input#message_content.form__message.js-content{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+      .form__mask
+        %label.form__mask__image{:for => "message_image"}
+          %i.fa.fa-picture-o.icon
+
+      %input.form__submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
