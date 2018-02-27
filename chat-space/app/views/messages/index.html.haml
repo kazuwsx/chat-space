@@ -1,34 +1,4 @@
 .wrapper
-  .side
-    .header
-      %h3.header__name
-        = current_user.name
-      %ul.header__lists
-        %li.list
-          = link_to do
-          = fa_icon 'pencil-square-o', class: 'icon'
-        %li.list
-           = link_to edit_user_path(current_user) do
-          = fa_icon 'cog', class: 'icon'
-    .groups
-      .group
-        %a{ :href => '/groups/new'}
-          .group__name
-            aaa
-          .group__message
-            iii
-      .group
-        %a{ :href => '/groups/new'}
-          .group__name
-            bbb
-          .group__message
-            lll
-      .group
-        %a{ :href => '/groups/new'}
-          .group__name
-            ccc
-          .group__message
-            メッセージはありません
   .chat
     .header
       .left-header
@@ -43,7 +13,7 @@
           %li.menber
             taku
       .right-header
-        %a.right-header__button{ :href => '/groups/edit'}
+        = link_to users_path do
           Edit
     .messages
       .message
