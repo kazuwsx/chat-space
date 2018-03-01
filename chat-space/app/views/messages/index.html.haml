@@ -12,52 +12,35 @@
             = fa_icon 'cog', class: 'icon'
     .groups
       - current_user.groups.each do |group|
-      .group
-        = link_to group__messages_path(group)
-          .group__name
-          = group.name
-          .group__message
-          まだメッセージは入力されていません
+        .group
+          = link_to group_messages_path(group) do
+            .group__name
+              = group.name
+            .group__message
+              = group.show_last_message
   .chat
-      .header
-        .left-header
-          .left-header__title
-            teamABC
-          %ul.left-header__members
-            Members :
-            %li.menber
-              kazu
-            %li.menber
-              ken
-            %li.menber
-              taku
-        .right-header
-          = link_to users_path do
-            Edit
-      .messages
-        .message
-          .upper-message
-            .upper-message__user-name
-              kazu
-            .upper-message__date
-              2018/02/19 07:17
-          .lower-message
-            .lower-message__content
-              aaa
-        .message
-          .upper-message
-            .upper-message__user-name
-              kazu
-            .upper-message__date
-              2018/02/19 07:17
-          .lower-message
-            .lower-message__content
-              ひまああああああ
-      .form
-        %form#new_message.js-form
-          %input#message_content.form__message.js-content{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-          .form__mask
-            %label.form__mask__image{:for => "message_image"}
-              %i.fa.fa-picture-o.icon
-
-          %input.form__submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+    .header
+      .left-header
+        .left-header__title
+          teamABC
+        %ul.left-header__members
+          Members :
+          %li.menber
+            kazu
+          %li.menber
+            ken
+          %li.menber
+            taku
+      .right-header
+        = link_to user_path(current_user) do
+          Edit
+    .messages
+      = render @messages
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
