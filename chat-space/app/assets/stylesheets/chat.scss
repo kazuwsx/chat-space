@@ -1,8 +1,8 @@
 .chat {
   width: calc(100vw - 300px);
-  height: 100vh;
-  float: left;
+  float: right;
   .header {
+    box-sizing: border-box;
     height: 100px;
     padding: 0 40px;
     .left-header {
@@ -25,6 +25,7 @@
     }
     .right-header {
       border: 1px solid #38AEF0;
+      color: #38AEF0;
       float: right;
       height: 40px;
       line-height:40px;
@@ -52,7 +53,8 @@
         }
         &__date {
           font-size: 12px;
-          color: #999999;
+          color: #999;
+          padding-left: 10px;
         }
       }
       .lower-message {
@@ -60,6 +62,7 @@
         &__content {
           font-size: 14px;
           color: #434a54;
+          margin-bottom: 40px;
         }
       }
     }
@@ -69,39 +72,34 @@
     height: 90px;
     box-sizing: border-box;
     padding: 20px 50px 20px 40px;
-    .js-form{
-      .form__message.js-content {
-        border: none;
-        box-sizing: border-box;
-        float: left;
-        height: 50px;
-        padding: 0 10px;
-        width: calc(100% - 150px);
+    &__message {
+      border: none;
+      float: left;
+      height: 50px;
+      width: calc(100% - 150px);
+    }
+    &__mask {
+      background-color:#fff;
+      float: left;
+      height: 50px;
+      padding-right: 10px;
+      &__image {
+        font-size: 20px;
+        line-height: 50px;
       }
-      .form__mask {
-        background-color:#fff;
-        float: left;
-        height: 50px;
-        padding-right: 10px;
-        weight: 31.44px;
-        .form__mask__image {
-          font-size: 20px;
-          line-height: 50px;
-          .fa {
-            color: #000;
-          }
-        }
+      .hidden {
+          display: none;
       }
-      .form__submit {
-        background-color: #38AEF0;
-        border: none;
-        color: #fff;
-        float: right;
-        font-size: 16px;
-        height: 50px;
-        margin-left: 15px;
-        padding: 0 30px;
-      }
+    }
+    &__submit {
+      background-color: #38AEF0;
+      border: none;
+      color: #fff;
+      float: right;
+      font-size: 16px;
+      height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
     }
   }
 }

@@ -1,6 +1,6 @@
 .side-bar {
   width: 300px;
-  background: #fff;
+  color: #fff;
   box-sizing: border-box;
   .header {
     height: 100px;
@@ -11,17 +11,16 @@
       display: inline-block;
       font-size: 16px;
       font-weight: bold;
-      color: white;
     }
     &__lists {
       display: inline-block;
       float: right;
       .list {
         display: inline-block;
-        .icon {
-          color: #fff;
-          font-size: 16px;
-        }
+      }
+      .icon {
+        color: #fff;
+        font-size: 16px;
       }
     }
   }
@@ -35,6 +34,7 @@
         &__name {
           font: 15px;
           color: #fff;
+
         }
         &__message {
           color: #fff;
