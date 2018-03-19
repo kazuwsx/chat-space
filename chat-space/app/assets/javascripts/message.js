@@ -1,18 +1,14 @@
 $(function() {
   function buildHTML(message){
     if( message.content !== undefined) {
-      var con = message.content;
-    }else{
-      var img = '';
+      var con = <p class="lower-message__content">${message.content}</p>
     }
     if( message.image_tag !== undefined) {
-      var img = message.image_tag;
-    }else{
-      var img = '';
+      var img = <img src='${message.image_tag}' >
     }
    var html =
    `
-   <div class="message">
+  <div class="message">
     <div class=upper-message>
       <div class="upper-message__user-name">
         ${message.user_name}
@@ -22,14 +18,10 @@ $(function() {
       </div>
     </div>
     <div lower-message>
-      <p class="lower-message__content">
-        ${con}
-      </p>
-      <div class="lower-message__image">
-        ${img}
-      </div>
+      ${con}
+      ${img}
     </div>
-   <div>
+  <div>
        `
    return html;
  }
