@@ -22,7 +22,7 @@ $(function() {
       ${img}
     </div>
   <div>
-       `
+       ` 
    return html;
  }
   $('#new_message').on('submit', function(e) {
