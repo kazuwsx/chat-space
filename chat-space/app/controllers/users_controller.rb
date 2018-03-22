@@ -1,5 +1,13 @@
 class UsersController < ApplicationController
 
+  def index
+   @users = User.where('title LIKE(?)',"%#{params[:keyword]}%").limit(5)
+   respond_to do |format|
+     format.html
+     format.json
+   end
+  end
+
   def edit
   end
 
@@ -11,8 +19,15 @@ class UsersController < ApplicationController
     end
   end
 
-  private
+  def search
+    @users = User.where('title LIKE(?)', "%#{params[:keyword]}%").limit(5)
+       respond_to do |format|
+         format.html
+         format.json
+       end
+  end
 
+  private
   def user_params
     params.require(:user).permit(:name, :email)
   end
