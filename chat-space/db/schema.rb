@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20180321082847) do
 
   create_table "group_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -64,9 +65,7 @@ ActiveRecord::Schema.define(version: 20180321082847) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
-
-  add_foreign_key "group_users", "groups"
-  add_foreign_key "group_users", "users"
+  
   add_foreign_key "members", "groups"
   add_foreign_key "members", "users"
 end
