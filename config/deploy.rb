@@ -17,7 +17,6 @@ set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 set :linked_files, %w{ config/secrets.yml }
 set :bundle_gemfile,  "server/Gemfile"
-set :repo_tree, 'chat-space'
 
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
